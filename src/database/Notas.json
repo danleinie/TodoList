@@ -1,0 +1,47 @@
+[
+    {
+        "id" : 1,
+        "title" : "Primera nota",
+        "content" : "Esta es mi primera nota",
+        "date" : "2013-10-21T13:28:06.419Z",
+        "bgColor" : "blue"
+    },
+    {
+        "id" : 2,
+        "title" : "Mis peliculas favoritas",
+        "content" : "Interstellar, Batman dark knight,etc.",
+        "date" : "2013-10-21T13:28:06.419Z",
+        "bgColor" : "red"
+        
+    },
+    {
+        "id" : 3,
+        "title" : "Primera nota",
+        "content" : "Esta es mi primera nota",
+        "date" : "2013-10-21T13:28:06.419Z",
+        "bgColor" : "gray"
+    },
+    {
+        "id" : 4,
+        "title" : "Mis peliculas favoritas",
+        "content" : "Interstellar, Batman dark knight,etc.",
+        "date" : "2013-10-21T13:28:06.419Z",
+        "bgColor" : "purple"
+        
+    },
+    {
+        "id" : 5,
+        "title" : "Primera nota",
+        "content" : "Esta es mi primera nota",
+        "date" : "2013-10-21T13:28:06.419Z",
+        "bgColor" : "yellow"
+    },
+    {
+        "id" : 6,
+        "title" : "Mis peliculas favoritas",
+        "content" : "Interstellar, Batman dark knight,etc .",
+        "date" : "2013-10-21T13:28:06.419Z",
+        "bgColor" : "green"
+        
+    }
+]
