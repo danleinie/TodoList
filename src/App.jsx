@@ -24,10 +24,13 @@ Modal.setAppElement('#root');
 
 function App() {
   const [notas, setNotas] = useState(notasJson)
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState({isOpen : false, title : '', content : '', bgColor : 'white', id : 0});
 
-  function openModal() {
-    setIsOpen(true);
+  function openModal(title='', content='', bgColor, id) {
+    const newStateModal = {
+      isOpen : true, title : title, content : content, bgColor : bgColor, id : id
+    }
+    setIsOpen(newStateModal);
   }
 
   function closeModal() {
@@ -36,9 +39,15 @@ function App() {
 
   const onSaveNewNote = (newNote) => {
     const newNotas = [...notas]
-    newNotas.unshift(
-      newNote
-    )
+    let indexNota = newNotas.findIndex(nota => {return nota.id == newNote.id})
+    console.log(indexNota)
+    if(indexNota>=0){
+      newNotas[indexNota] = newNote
+    }else{
+      newNotas.unshift(
+        newNote
+      )
+    }
     setNotas(newNotas)
   }
 
@@ -54,11 +63,13 @@ function App() {
               return (
                 <NoteCard
                   key={nota.id}
+                  id={nota.id}
                   title={nota.title}
                   content={nota.content}
                   date={nota.date}
                   bgColor={nota.bgColor}
                   formatter={formattedDate}
+                  openModal={openModal}
                 ></NoteCard>
               )
             })
@@ -66,13 +77,17 @@ function App() {
         </div>
         <div>
           <Modal
-            isOpen={modalIsOpen}
+            isOpen={modalIsOpen.isOpen}
             onRequestClose={closeModal}
             style={customStyles}
           >
             <NoteModal
               onSave={onSaveNewNote}
               onClose={closeModal}
+              titleParam={modalIsOpen.title}
+              contentParam={modalIsOpen.content}
+              bgColorParam={modalIsOpen.bgColor}
+              id={modalIsOpen.id}
             />
           </Modal>
         </div>

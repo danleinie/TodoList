@@ -11,12 +11,13 @@ export const formattedDate = (date) => {
 } 
   
 export const colorVariants = {
-  blue: 'bg-blue-300',
-  red: 'bg-red-300',
-  green: 'bg-green-300',
-  purple: 'bg-purple-300',
-  yellow: 'bg-yellow-300',
-  pink: 'bg-pink-300',
-  gray: 'bg-gray-300',
+  blue: 'bg-blue-200',
+  red: 'bg-red-200',
+  green: 'bg-green-200',
+  purple: 'bg-purple-200',
+  yellow: 'bg-yellow-200',
+  pink: 'bg-pink-200',
+  gray: 'bg-gray-200',
   white: 'bg-white'
 }
+
