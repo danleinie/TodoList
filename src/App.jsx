@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import plusLogo from './assets/plus.svg'
 import { NoteCard } from './components/NoteCard'
@@ -51,12 +51,30 @@ function App() {
     setNotas(newNotas)
   }
 
+  //Se usa para filtar el json de notas
+  // useEffect(() =>{
+
+  // })
+
+  const onChangeSearch = (e) =>{
+    //console.log(e.target.value)
+    const text = e.target.value
+    const notasFiltered = notas.filter(nota =>{
+      if(nota.title.includes(text) || nota.content.includes(text)) return nota
+    })
+    setNotas(notasFiltered)
+  }
+
   return (
     <>
       <MenuLateral 
       onClickNote={openModal}
       />
       <aside className='m-20'>
+        <div className='mb-5 flex justify-center gap-3' >
+        <input onChange={onChangeSearch} className='border-2 rounded-lg w-96 p-3' placeholder='Buscar aqui...'>
+        </input>
+        </div>
         <div className='flex flex-wrap gap-10'>
           {
             notas.map((nota) => {
