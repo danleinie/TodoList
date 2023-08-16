@@ -34,10 +34,10 @@ function App() {
   }
 
   function closeModal() {
-    setIsOpen(false);
+    setIsOpen(false); 
   }
 
-  const onSaveNewNote = (newNote) => {
+  const onSaveNewNote = (newNote) => { 
     const newNotas = [...notas]
     let indexNota = newNotas.findIndex(nota => {return nota.id == newNote.id})
     console.log(indexNota)
@@ -51,7 +51,7 @@ function App() {
     setNotas(newNotas)
   }
 
-  //Se usa para filtar el json de notas
+  //Se usa para filtar el json de notas y 
   // useEffect(() =>{
 
   // })
